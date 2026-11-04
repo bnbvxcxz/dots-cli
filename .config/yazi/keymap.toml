@@ -1,0 +1,200 @@
+#:schema https://yazi-rs.github.io/schemas/keymap.json
+
+[mgr]
+
+prepend_keymap = [
+    # Core Navigation (Typeahead Intercepts)
+    { on = [ "<Enter>" ], run = "plugin typeahead -- enter",  desc = "Cycle typeahead match or smart-enter" },
+    { on = [ "<Right>" ], run = "plugin typeahead -- right", desc = "Enter dir / open file and clear typeahead" },
+    { on = [ "<Esc>" ],   run = "plugin typeahead -- escape", desc = "Clear typeahead buffer and cancel state" },
+    { on = [ "<Left>" ],  run = [ "leave", "escape --find --filter" ],              desc = "Leave directory and clear filter" },
+    { on = [ "<Up>" ],    run = "arrow prev",                                       desc = "Previous file" },
+    { on = [ "<Down>" ],  run = "arrow next",                                       desc = "Next file" },
+    { on = [ "<Home>" ],  run = "arrow top",                                        desc = "Go to top" },
+    { on = [ "<End>" ],   run = "arrow bot",                                        desc = "Go to bottom" },
+    { on = [ "<PageUp>" ],   run = "arrow -100%",                                   desc = "Page up" },
+    { on = [ "<PageDown>" ], run = "arrow 100%",                                    desc = "Page down" },
+    { on = [ "<Space>" ],    run = "toggle",                                        desc = "Toggle selection in place" },
+
+    # Dolphin History Navigation
+    { on = [ "<A-Left>" ],  run = "back",    desc = "Go back in history" },
+    { on = [ "<A-Right>" ], run = "forward", desc = "Go forward in history" },
+    { on = [ "<A-Up>" ],    run = "leave",   desc = "Go to parent directory" },
+
+    # Dolphin Tab Switching
+    { on = [ "<A-1>" ], run = "tab_switch 0", desc = "Switch to tab 1" },
+    { on = [ "<A-2>" ], run = "tab_switch 1", desc = "Switch to tab 2" },
+    { on = [ "<A-3>" ], run = "tab_switch 2", desc = "Switch to tab 3" },
+    { on = [ "<A-4>" ], run = "tab_switch 3", desc = "Switch to tab 4" },
+    { on = [ "<A-5>" ], run = "tab_switch 5", desc = "Switch to tab 5" },
+    { on = [ "<A-6>" ], run = "tab_switch 6", desc = "Switch to tab 6" },
+    { on = [ "<A-7>" ], run = "tab_switch 7", desc = "Switch to tab 7" },
+    { on = [ "<A-8>" ], run = "tab_switch 8", desc = "Switch to tab 8" },
+    { on = [ "<A-9>" ], run = "tab_switch 9", desc = "Switch to tab 9" },
+    { on = [ "<A-0>" ], run = "tab_switch 9", desc = "Switch to last tab" },
+
+    # Live Regex Filter
+    { on = [ "/" ],           run = "filter",          desc = "Live regex filter" },
+    { on = [ "<C-i>" ],       run = "filter",          desc = "Live regex filter (Dolphin)" },
+    { on = [ "<Backspace>" ], run = "escape --filter", desc = "Clear active filter" },
+
+    # Fast Scrolling
+    { on = [ "<C-Down>" ], run = "arrow 5",  desc = "Jump down 5 files" },
+    { on = [ "<C-Up>" ],   run = "arrow -5", desc = "Jump up 5 files" },
+
+    # File Operations & Wayland Clipboard
+    { on = [ "<C-c>" ],      run = [ "yank", "plugin wl-clipboard" ], desc = "Copy files to Yazi and system clipboard" },
+    { on = [ "<C-x>" ],      run = [ "yank --cut", "plugin wl-clipboard" ], desc = "Cut files to Yazi and system clipboard" },
+    { on = [ "<C-v>" ],      run = "paste",            desc = "Paste into CWD" },
+    { on = [ "<C-a>" ],      run = "toggle_all --state=on",         desc = "Select all files" },
+    { on = [ "<Delete>" ],   run = "remove",                        desc = "Trash selected files" },
+    { on = [ "<S-Delete>" ], run = "remove --permanently",          desc = "Permanently delete files" },
+    { on = [ "<F2>" ],       run = "rename --cursor=before_ext",    desc = "Rename selected file" },
+    { on = [ "<C-S-n>" ],    run = "create",                        desc = "Create file or folder (trailing /)" },
+
+    # Native / Low-Lag Copy & Paste
+    { on = [ "<A-y>" ], run = "yank",  desc = "Native yank (no clipboard lag)" },
+    { on = [ "<A-p>" ], run = "paste", desc = "Native paste" },
+
+    # Tabs & Workspace Views
+    { on = [ "<C-t>" ],     run = "tab_create --current",                       desc = "New tab in CWD" },
+    { on = [ "<C-w>" ],     run = "close",                                      desc = "Close current tab" },
+    { on = [ "<C-S-t>" ],   run = "plugin close-and-restore-tab restore",       desc = "Restore last closed tab" },
+    { on = [ "<C-Tab>" ],   run = "tab_switch 1 --relative",                    desc = "Switch to next tab" },
+    { on = [ "<C-S-Tab>" ], run = "tab_switch -1 --relative",                   desc = "Switch to previous tab" },
+    { on = [ "<F11>" ],     run = "plugin toggle-pane max-preview",             desc = "Maximize / restore preview pane" },
+    { on = [ "<Tab>" ],     run = "plugin toggle-pane max-preview",             desc = "Maximize / restore preview pane" },
+    { on = [ "<C-h>" ],     run = "hidden toggle",                              desc = "Toggle hidden files" },
+
+    # System, Terminal & Session
+    { on = [ "<F4>" ],  run = "shell '$SHELL' --block --interactive", desc = "Open interactive shell in CWD" },
+    { on = [ "<F5>" ],  run = "refresh",                              desc = "Refresh current tab" },
+    { on = [ "<C-l>" ], run = "cd --interactive",                     desc = "Jump to path" },
+    { on = [ "<C-q>" ],   run = "quit", desc = "Quit Yazi (shell wrapper changes directory)" },
+    { on = [ "<C-S-q>" ], run = "quit --no-cwd-file", desc = "Quit Yazi completely without changing shell CWD" },
+    { on = [ "<F1>" ],  run = "help",                               desc = "Open help menu" },
+
+    # Zoom
+    { on = [ "<C-=>" ], run = "plugin zoom 1",  desc = "Zoom in preview" },
+    { on = [ "<C-->" ], run = "plugin zoom -1", desc = "Zoom out preview" },
+    { on = [ "+" ],     run = "plugin zoom 1",  desc = "Zoom in preview" },
+    { on = [ "-" ],     run = "plugin zoom -1", desc = "Zoom out preview" },
+
+    # Modifier-Led Chords (Alt + C)
+    { on = [ "<A-c>", "." ], run = "shell 'code .' --orphan",             desc = "Open CWD in VS Code" },
+    { on = [ "<A-c>", "r" ], run = "shell 'realpath --relative-to=\"$PWD\" \"${1:-$0}\" | wl-copy' --confirm", desc = "Copy relative path text" },
+    { on = [ "<A-c>", "d" ], run = "shell 'printf \"%s\" \"$PWD\" | wl-copy' --confirm", desc = "Copy directory path text" },
+    { on = [ "<A-c>", "f" ], run = "shell 'printf \"%s\" \"${1:-$0}\" | wl-copy' --confirm", desc = "Copy absolute file path text" },
+    { on = [ "<A-c>", "m" ], run = "plugin chmod",                        desc = "Chmod permissions" },
+    { on = [ "<A-c>", "z" ], run = "plugin ouch",                         desc = "Compress files with Ouch" },
+    { on = [ "<A-c>", "c" ], run = "plugin copy-file-contents",           desc = "Copy file text contents" },
+    { on = [ "<A-c>", "D" ], run = "shell 'for f in \"$@\"; do cp -r \"$f\" \"${f%.*}.bak.${f##*.}\"; done' --confirm", desc = "Duplicate file(s)" },
+
+    # Directory Jumps (Alt + J)
+    { on = [ "<A-j>", "r" ], run = "cd '~/Documents/music-stuff/Renoise projects'", desc = "Go to Renoise projects" },
+    { on = [ "<A-j>", "s" ], run = "cd ~/Documents/school",                    desc = "Go to School" },
+    { on = [ "<A-j>", "g" ], run = "cd ~/games",                              desc = "Go to Games" },
+    { on = [ "<A-j>", "h" ], run = "cd ~",                                    desc = "Go home" },
+    { on = [ "<A-j>", "c" ], run = "cd ~/.config",                            desc = "Go to ~/.config" },
+    { on = [ "<A-j>", "d" ], run = "cd ~/Downloads",                         desc = "Go to ~/Downloads" },
+
+    # Standalone Alt Utility Triggers
+    { on = [ "<A-b>" ], run = '''shell '~/.config/yazi/places.sh && if [ -s /tmp/yazi_places_target ]; then ya emit cd "$(cat /tmp/yazi_places_target)"; fi' --block''', desc = "Places menu" },
+    { on = [ "<A-m>" ], run = "shell '~/.config/yazi/toggle_bookmark.sh \"$0\"' --block", desc = "Bookmark folder" },
+    { on = [ "<A-t>" ], run = "plugin omni-trash",         desc = "Omni-trash manager" },
+    { on = [ "<A-x>" ], run = "plugin sudo",               desc = "Root / sudo action" },
+    { on = [ "<A-k>" ], run = "plugin kdeconnect-send",    desc = "Send via KDE Connect" },
+    { on = [ "<A-v>" ], run = "visual_mode",               desc = "Enter visual mode" },
+
+    # Neutralized Bare Punctuation
+    { on = [ ";" ], run = "noop", desc = "Disabled bare semicolon" },
+    { on = [ ":" ], run = "noop", desc = "Disabled bare colon" },
+
+    # Typeahead: Lowercase a-z
+    { on = [ "a" ], run = "plugin typeahead -- a", desc = "Typeahead: a" },
+    { on = [ "b" ], run = "plugin typeahead -- b", desc = "Typeahead: b" },
+    { on = [ "c" ], run = "plugin typeahead -- c", desc = "Typeahead: c" },
+    { on = [ "d" ], run = "plugin typeahead -- d", desc = "Typeahead: d" },
+    { on = [ "e" ], run = "plugin typeahead -- e", desc = "Typeahead: e" },
+    { on = [ "f" ], run = "plugin typeahead -- f", desc = "Typeahead: f" },
+    { on = [ "g" ], run = "plugin typeahead -- g", desc = "Typeahead: g" },
+    { on = [ "h" ], run = "plugin typeahead -- h", desc = "Typeahead: h" },
+    { on = [ "i" ], run = "plugin typeahead -- i", desc = "Typeahead: i" },
+    { on = [ "j" ], run = "plugin typeahead -- j", desc = "Typeahead: j" },
+    { on = [ "k" ], run = "plugin typeahead -- k", desc = "Typeahead: k" },
+    { on = [ "l" ], run = "plugin typeahead -- l", desc = "Typeahead: l" },
+    { on = [ "m" ], run = "plugin typeahead -- m", desc = "Typeahead: m" },
+    { on = [ "n" ], run = "plugin typeahead -- n", desc = "Typeahead: n" },
+    { on = [ "o" ], run = "plugin typeahead -- o", desc = "Typeahead: o" },
+    { on = [ "p" ], run = "plugin typeahead -- p", desc = "Typeahead: p" },
+    { on = [ "q" ], run = "plugin typeahead -- q", desc = "Typeahead: q" },
+    { on = [ "r" ], run = "plugin typeahead -- r", desc = "Typeahead: r" },
+    { on = [ "s" ], run = "plugin typeahead -- s", desc = "Typeahead: s" },
+    { on = [ "t" ], run = "plugin typeahead -- t", desc = "Typeahead: t" },
+    { on = [ "u" ], run = "plugin typeahead -- u", desc = "Typeahead: u" },
+    { on = [ "v" ], run = "plugin typeahead -- v", desc = "Typeahead: v" },
+    { on = [ "w" ], run = "plugin typeahead -- w", desc = "Typeahead: w" },
+    { on = [ "x" ], run = "plugin typeahead -- x", desc = "Typeahead: x" },
+    { on = [ "y" ], run = "plugin typeahead -- y", desc = "Typeahead: y" },
+    { on = [ "z" ], run = "plugin typeahead -- z", desc = "Typeahead: z" },
+
+    # Typeahead: Uppercase A-Z
+    { on = [ "A" ], run = "plugin typeahead -- A", desc = "Typeahead: A" },
+    { on = [ "B" ], run = "plugin typeahead -- B", desc = "Typeahead: B" },
+    { on = [ "C" ], run = "plugin typeahead -- C", desc = "Typeahead: C" },
+    { on = [ "D" ], run = "plugin typeahead -- D", desc = "Typeahead: D" },
+    { on = [ "E" ], run = "plugin typeahead -- E", desc = "Typeahead: E" },
+    { on = [ "F" ], run = "plugin typeahead -- F", desc = "Typeahead: F" },
+    { on = [ "G" ], run = "plugin typeahead -- G", desc = "Typeahead: G" },
+    { on = [ "H" ], run = "plugin typeahead -- H", desc = "Typeahead: H" },
+    { on = [ "I" ], run = "plugin typeahead -- I", desc = "Typeahead: I" },
+    { on = [ "J" ], run = "plugin typeahead -- J", desc = "Typeahead: J" },
+    { on = [ "K" ], run = "plugin typeahead -- K", desc = "Typeahead: K" },
+    { on = [ "L" ], run = "plugin typeahead -- L", desc = "Typeahead: L" },
+    { on = [ "M" ], run = "plugin typeahead -- M", desc = "Typeahead: M" },
+    { on = [ "N" ], run = "plugin typeahead -- N", desc = "Typeahead: N" },
+    { on = [ "O" ], run = "plugin typeahead -- O", desc = "Typeahead: O" },
+    { on = [ "P" ], run = "plugin typeahead -- P", desc = "Typeahead: P" },
+    { on = [ "Q" ], run = "plugin typeahead -- Q", desc = "Typeahead: Q" },
+    { on = [ "R" ], run = "plugin typeahead -- R", desc = "Typeahead: R" },
+    { on = [ "S" ], run = "plugin typeahead -- S", desc = "Typeahead: S" },
+    { on = [ "T" ], run = "plugin typeahead -- T", desc = "Typeahead: T" },
+    { on = [ "U" ], run = "plugin typeahead -- U", desc = "Typeahead: U" },
+    { on = [ "V" ], run = "plugin typeahead -- V", desc = "Typeahead: V" },
+    { on = [ "W" ], run = "plugin typeahead -- W", desc = "Typeahead: W" },
+    { on = [ "X" ], run = "plugin typeahead -- X", desc = "Typeahead: X" },
+    { on = [ "Y" ], run = "plugin typeahead -- Y", desc = "Typeahead: Y" },
+    { on = [ "Z" ], run = "plugin typeahead -- Z", desc = "Typeahead: Z" },
+
+    # Typeahead: Digits 0-9
+    { on = [ "0" ], run = "plugin typeahead -- 0", desc = "Typeahead: 0" },
+    { on = [ "1" ], run = "plugin typeahead -- 1", desc = "Typeahead: 1" },
+    { on = [ "2" ], run = "plugin typeahead -- 2", desc = "Typeahead: 2" },
+    { on = [ "3" ], run = "plugin typeahead -- 3", desc = "Typeahead: 3" },
+    { on = [ "4" ], run = "plugin typeahead -- 4", desc = "Typeahead: 4" },
+    { on = [ "5" ], run = "plugin typeahead -- 5", desc = "Typeahead: 5" },
+    { on = [ "6" ], run = "plugin typeahead -- 6", desc = "Typeahead: 6" },
+    { on = [ "7" ], run = "plugin typeahead -- 7", desc = "Typeahead: 7" },
+    { on = [ "8" ], run = "plugin typeahead -- 8", desc = "Typeahead: 8" },
+    { on = [ "9" ], run = "plugin typeahead -- 9", desc = "Typeahead: 9" },
+
+    # Typeahead: Symbols & Punctuation
+    { on = [ "." ], run = "plugin typeahead -- .", desc = "Typeahead: ." },
+    { on = [ "_" ], run = "plugin typeahead -- _", desc = "Typeahead: _" },
+    { on = [ "-" ], run = "plugin typeahead -", desc = "Typeahead: -" },
+    { on = [ "~" ], run = "plugin typeahead -- ~", desc = "Typeahead: ~" },
+    { on = [ "@" ], run = "plugin typeahead -- @", desc = "Typeahead: @" },
+    { on = [ "#" ], run = "plugin typeahead -- #", desc = "Typeahead: #" },
+    { on = [ "$" ], run = "plugin typeahead -- $", desc = "Typeahead: $" },
+    { on = [ "%" ], run = "plugin typeahead -- %", desc = "Typeahead: %" },
+    { on = [ "^" ], run = "plugin typeahead -- ^", desc = "Typeahead: ^" },
+    { on = [ "&" ], run = "plugin typeahead -- &", desc = "Typeahead: &" },
+    { on = [ "(" ], run = "plugin typeahead -- (", desc = "Typeahead: (" },
+    { on = [ ")" ], run = "plugin typeahead -- )", desc = "Typeahead: )" },
+    { on = [ "[" ], run = "plugin typeahead -- [", desc = "Typeahead: [" },
+    { on = [ "]" ], run = "plugin typeahead -- ]", desc = "Typeahead: ]" },
+    { on = [ "{" ], run = "plugin typeahead -- {", desc = "Typeahead: {" },
+    { on = [ "}" ], run = "plugin typeahead -- }", desc = "Typeahead: }" },
+    { on = [ "!" ], run = "plugin typeahead -- !", desc = "Typeahead: !" },
+    { on = [ "=" ], run = "plugin typeahead -- =", desc = "Typeahead: =" },
+]

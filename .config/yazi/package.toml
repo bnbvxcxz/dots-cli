@@ -1,0 +1,132 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "896fa5a"
+hash = "187cc58ba7ac3befd49c342129e6f1b6"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "596b666"
+hash = "c2f4f4aca257dcceafa9e3b828dbf1c9"
+
+[[plugin.deps]]
+use = "skylightlim/omniconvert"
+rev = "98f2555"
+hash = "fddcd13831c734521e22e6c83214b6f6"
+
+[[plugin.deps]]
+use = "Deepak22903/kdeconnect-send"
+rev = "06674d1"
+hash = "869884767c2ef592bfb7f5764f8fcae3"
+
+[[plugin.deps]]
+use = "TD-Sky/sudo"
+rev = "e70796a"
+hash = "74129f78c811cfe7c694d86c3f634c26"
+
+[[plugin.deps]]
+use = "grappas/wl-clipboard"
+rev = "8cc5524"
+hash = "5c587834c274dca9059092714ece1f18"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "896fa5a"
+hash = "87472b05a8c420100f6a2b9cde1e7746"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "896fa5a"
+hash = "347cc6b190eb0c2fd60513cc7ae37412"
+
+[[plugin.deps]]
+use = "Sonico98/exifaudio"
+rev = "4506f9d"
+hash = "4761fffb60a12d37096c34a356380cdf"
+
+[[plugin.deps]]
+use = "wylie102/duckdb"
+rev = "3f8c863"
+hash = "87b9233a74325e95011670ed20bbd0d4"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:jump-to-char"
+rev = "896fa5a"
+hash = "7a4b4237223aaa94e589d1c01a23542a"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "896fa5a"
+hash = "d6f7351ea25a43c9b5f4315fa1e23935"
+
+[[plugin.deps]]
+use = "AnirudhG07/plugins-yazi:copy-file-contents"
+rev = "3f4f1a3"
+hash = "421263a8558fbd2fdb07a75f074cc6e3"
+
+[[plugin.deps]]
+use = "FelipeKerr/rsync-paste"
+rev = "868f718"
+hash = "e47341105e5c9421314d6136c362bf83"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "896fa5a"
+hash = "17ebde15c4349f90aedbc45984b98db2"
+
+[[plugin.deps]]
+use = "goon/omni-trash"
+rev = "3c2a992"
+hash = "6e5bf967707c8c9b6495cf5863ff497f"
+
+[[plugin.deps]]
+use = "AnirudhG07/rich-preview"
+rev = "02597c4"
+hash = "33982a6e2d6df07619a2a0fc163a0950"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-paste"
+rev = "896fa5a"
+hash = "5be02722d97561b6f7aec22429aa00be"
+
+[[plugin.deps]]
+use = "qwjyh/relative-path"
+rev = "87dcc68"
+hash = "7a423e9b7e89803105442878eb0fe242"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "e73fd74"
+hash = "6ea5f37c7f219671ec504cb8311f889d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:diff"
+rev = "896fa5a"
+hash = "14558d2829c0aa05e99c57de8f74d199"
+
+[[plugin.deps]]
+use = "pirafrank/what-size"
+rev = "1cb456f"
+hash = "7699acf73a1079f8a4afef5cec84ce73"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "896fa5a"
+hash = "558bbb58e3dd36d488280a8f10e7b904"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "896fa5a"
+hash = "5b2fbef7d1513ce38ff72623a071a5e"
+
+[[plugin.deps]]
+use = "barbanevosa/autosession"
+rev = "7a12b20"
+hash = "f9b76184511c983db7c6f719eea1e14d"
+
+[[plugin.deps]]
+use = "MasouShizuka/close-and-restore-tab"
+rev = "b2153bc"
+hash = "1493e40f8f4f222c9ecb24cf85ccabd2"
+
+[flavor]
+deps = []

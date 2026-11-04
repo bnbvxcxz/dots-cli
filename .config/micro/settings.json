@@ -1,0 +1,20 @@
+{
+    "clipboard": "terminal",
+    "colorscheme": "matugen",
+    "cursorline": true,
+    "diffgutter": true,
+    "hltrailingws": true,
+    "mkparents": true,
+    "mouse": true,
+    "parsecursor": true,
+    "rmtrailingws": true,
+    "autoclose": false,
+    "savecursor": true,
+    "savehistory": true,
+    "saveundo": true,
+    "scrollmargin": 4,
+    "scrollspeed": 2,
+    "tabmovement": true,
+    "tabsize": 4,
+    "tabstospaces": true
+}

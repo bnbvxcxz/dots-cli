@@ -1,0 +1,18 @@
+# OS / Editor Caches
+*~
+*.swp
+*.bak
+.DS_Store
+
+# Micro Editor Runtime
+.config/micro/buffers/
+.config/micro/backups/
+.config/micro/history
+
+# Matugen Generated Theme Outputs
+.config/kitty/colors-matugen.conf
+.config/btop/themes/matugen.theme
+.config/helix/themes/matugen.toml
+.config/kak/colors/matugen.kak
+.config/micro/colorschemes/matugen.micro
+.config/yazi/theme.toml

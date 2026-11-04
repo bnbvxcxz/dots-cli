@@ -1,0 +1,36 @@
+{
+    // LSP Formatting
+    "Alt-F": "command:lsp format",
+
+    // File Management & Navigation
+    "Alt-t": "lua:filemanager.toggle_tree",
+    "Ctrl-p": "command:fzf",
+    "F4": "command:jump",
+
+    // Paragraph / Block Navigation & Selection
+    "CtrlUp": "ParagraphPrevious",
+    "CtrlDown": "ParagraphNext",
+    "CtrlShiftUp": "SelectToParagraphPrevious",
+    "CtrlShiftDown": "SelectToParagraphNext",
+
+    // Code & Line Manipulation
+    "Alt-Up": "MoveLinesUp",
+    "Alt-Down": "MoveLinesDown",
+    "Alt-d": "DuplicateLine",
+    "Alt-k": "DeleteLine",
+    "Alt-l": "SelectLine",
+    "Alt-J": "command:joinLines",
+
+    // Pair Navigation & Commands
+    "Alt-m": "JumpToMatchingBrace",
+    "Alt-j": "command-edit:goto ",
+
+    // SubWord Navigation (camelCase / snake_case)
+    "Alt-Left": "SubWordLeft",
+    "Alt-Right": "SubWordRight",
+    "Alt-Delete": "DeleteSubWordRight",
+
+    // Multi-Cursor
+    "Alt-a": "SpawnMultiCursorSelect"
+}
+

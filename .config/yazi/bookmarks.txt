@@ -1,0 +1,12 @@
+Home|~
+Git|~/Documents/git
+School|~/Documents/school
+fedora|/mnt/fedora
+14aph8|/mnt/legion
+Downloads|~/Downloads
+Documents|~/Documents
+Pictures|~/Pictures
+Games|~/games
+Music|~/Music
+Renoise projects|~/Documents/music-stuff/Renoise projects
+Trash|~/.local/share/Trash/files
