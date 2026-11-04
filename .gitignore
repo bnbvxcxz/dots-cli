@@ -9,10 +9,12 @@
 .config/micro/backups/
 .config/micro/history
 
-# Matugen Generated Theme Outputs
+# Matugen Generated Theme Outputs & Dynamic Files
 .config/kitty/colors-matugen.conf
 .config/btop/themes/matugen.theme
 .config/helix/themes/matugen.toml
 .config/kak/colors/matugen.kak
 .config/micro/colorschemes/matugen.micro
 .config/yazi/theme.toml
+.config/yazi/bookmarks.txt
+.config/ohmyposh/colors.json
