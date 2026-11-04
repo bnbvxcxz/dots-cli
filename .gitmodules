@@ -1,0 +1,3 @@
+[submodule ".config/yazi/plugins/typeahead.yazi"]
+	path = .config/yazi/plugins/typeahead.yazi
+	url = https://github.com/bnbvxcxz/typeahead.yazi.git
